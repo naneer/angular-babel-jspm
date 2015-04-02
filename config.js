@@ -19,8 +19,12 @@ System.config({
     "angular-animate": "github:angular/bower-angular-animate@1.3.15",
     "angular-aria": "github:angular/bower-angular-aria@1.3.15",
     "angular-material": "github:angular/bower-material@0.8.3",
+    "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
+    "github:angular-ui/ui-router@0.2.13": {
+      "angular": "github:angular/bower-angular@1.3.15"
+    },
     "github:angular/bower-angular-animate@1.3.15": {
       "angular": "github:angular/bower-angular@1.3.15"
     },
