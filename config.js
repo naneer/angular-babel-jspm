@@ -22,6 +22,7 @@ System.config({
     "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
+    "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.13": {
       "angular": "github:angular/bower-angular@1.3.15"
     },
