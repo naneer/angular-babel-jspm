@@ -6,4 +6,4 @@
 # stops script on errors
 set -e errexit
 
-karma start --single-run
+protractor
