@@ -1,14 +1,14 @@
 'use strict';
 
 var options = {
-  port: process.env.HTTP_PORT || '8000'
+  port: '3000'
 };
 
 var jar = require('selenium-server-standalone-jar');
 
 exports.config = {
   seleniumServerJar: jar.path,
-  directConnect: false,
+  directConnect: true,
   suites: {
     full: 'lib/**/*.e2e.js'
   },
