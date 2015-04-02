@@ -1,0 +1,38 @@
+{
+  "name": "angularJSPM",
+  "version": "0.0.0",
+  "description": "angular jspm build",
+  "main": "index.js",
+  "scripts": {
+    "test": "bash ./scripts/test",
+    "start": "bash ./scripts/start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/naneer/angularjspm"
+  },
+  "keywords": [
+    "angularjs",
+    "jspm"
+  ],
+  "author": "reenan.arbitrario@gmail.com",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/naneer/angularjspm/issues"
+  },
+  "homepage": "https://github.com/naneer/angularjspm",
+  "jspm": {
+    "directories": {},
+    "devDependencies": {
+      "traceur": "github:jmcriffey/bower-traceur@0.0.87",
+      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87"
+    }
+  },
+  "devDependencies": {
+    "jspm": "^0.15.1",
+    "connect": "^3.3.5",
+    "minimist": "^1.1.1",
+    "send": "^0.12.2",
+    "serve-static": "^1.9.2"
+  }
+}

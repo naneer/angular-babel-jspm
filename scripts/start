@@ -1,0 +1,10 @@
+#!/bin/bash
+# Usage: script/start
+# Starts the project's development server.
+# not used in Nitrous Build
+
+# stops script on errors
+set -e errexit
+
+# starts connect http server
+node ./scripts/lib/server.js --port=3000 --verbose --root ./
