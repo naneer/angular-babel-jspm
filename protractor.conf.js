@@ -8,7 +8,7 @@ var jar = require('selenium-server-standalone-jar');
 
 exports.config = {
   seleniumServerJar: jar.path,
-  directConnect: true,
+  directConnect: false,
   suites: {
     full: 'lib/**/*.e2e.js'
   },
