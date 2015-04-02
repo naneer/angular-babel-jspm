@@ -30,8 +30,8 @@
       "angular-material": "github:angular/bower-material@^0.8.3"
     },
     "devDependencies": {
-      "traceur": "github:jmcriffey/bower-traceur@0.0.87",
-      "traceur-runtime": "github:jmcriffey/bower-traceur-runtime@0.0.87"
+      "babel": "npm:babel@^4.7.16",
+      "babel-runtime": "npm:babel-runtime@^4.7.16"
     }
   },
   "devDependencies": {
