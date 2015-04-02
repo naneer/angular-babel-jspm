@@ -6,6 +6,4 @@
 # stops script on errors
 set -e errexit
 
-npm start
-
 protractor
