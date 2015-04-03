@@ -10,7 +10,7 @@ exports.config = {
   seleniumServerJar: jar.path,
   directConnect: true,
   suites: {
-    full: 'lib/**/*.e2e.js'
+    full: 'src/lib/**/*.e2e.js'
   },
   capabilities: {
     browserName: 'chrome'
