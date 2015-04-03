@@ -6,6 +6,4 @@
 # stops script on errors
 set -e errexit
 
-cp -R ./src/**/*.html ./dist
-node ./scripts/lib/server.js --port=3000 --verbose --root ./dist > /dev/null &
 protractor
