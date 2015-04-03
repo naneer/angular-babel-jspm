@@ -7,4 +7,4 @@
 set -e errexit
 
 # starts connect http server
-node ./scripts/lib/server.js --port=3000 --verbose --root ./
+node ./scripts/lib/server.js --port=3000 --verbose --root ./src

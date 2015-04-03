@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/naneer/angularjspm",
   "jspm": {
-    "directories": {},
+    "directories": {
+      "baseURL": "src"
+    },
     "dependencies": {
       "angular": "github:angular/bower-angular@^1.3.15",
       "angular-animate": "github:angular/bower-angular-animate@^1.3.15",
