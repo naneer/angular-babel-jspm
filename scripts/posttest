@@ -1,9 +1,0 @@
-#!/bin/bash
-# Usage: scripts/posttest
-# Starts the project's posttest.
-
-
-# stops script on errors
-set -e errexit
-
-kill %1
