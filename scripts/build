@@ -1,0 +1,10 @@
+#!/bin/bash
+# Usage: scripts/build
+# Starts the project's dist build.
+
+
+# stops script on errors
+set -e errexit
+
+jspm bundle lib/bootstrap dist/build.js
+gulp index

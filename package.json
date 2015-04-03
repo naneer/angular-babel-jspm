@@ -4,7 +4,9 @@
   "description": "angular jspm build",
   "main": "index.js",
   "scripts": {
+    "pretest": "bash ./scripts/pretest",
     "test": "bash ./scripts/test",
+    "posttest": "bash ./scripts/posttest",
     "start": "bash ./scripts/start"
   },
   "repository": {

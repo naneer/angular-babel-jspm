@@ -1,0 +1,11 @@
+#!/bin/bash
+# Usage: scripts/pretest
+# Starts the project's prettest.
+
+
+# stops script on errors
+set -e errexit
+
+bash ./scripts/build
+
+webdriver-manager update
