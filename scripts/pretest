@@ -7,7 +7,6 @@
 set -e errexit
 
 bash ./scripts/build
-
+node ./scripts/lib/server.js --port=3000 --verbose --root ./dist > /dev/null &
 webdriver-manager update
 
-node ./scripts/lib/server.js --port=3000 --verbose --root ./dist > /dev/null &
