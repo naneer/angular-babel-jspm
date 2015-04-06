@@ -10,7 +10,11 @@ export var homeIndexRouteModule = angular.module('homeIndexRouteModule', [
   function homeRoute($stateProvider){
     $stateProvider.state('home.index', {
       url: '/',
-      template: template
+      views: {
+        'index': {
+          template: template
+        }
+      }
     })
   }
 ])

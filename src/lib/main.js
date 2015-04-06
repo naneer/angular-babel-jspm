@@ -5,12 +5,10 @@ import 'angular-aria';
 
 import {homeRouteModule} from './routes/home/home.route';
 import {mainConfigModule} from './config/main.config';
-import {testController} from './controller/testcontroller';
 
 export var mainModule = angular.module('mainModule', [
   'ngMaterial',
   homeRouteModule.name,
   mainConfigModule.name
   ])
-  .controller(testController.name, testController)
 ;

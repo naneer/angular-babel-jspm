@@ -9,6 +9,9 @@ gulp.task('index', function () {
   gulp.src(['./src/jspm_packages/*.js', './src/jspm_packages/*.map'])
     .pipe(gulp.dest('./dist/jspm_packages'));
   
+  gulp.src(['./src/assets/images/*.jpg'])
+    .pipe(gulp.dest('./dist/assets/images/'))
+  
   var target = gulp.src('./src/index.html');
   // It's not necessary to read the files (will speed up things), we're only after their paths: 
   var sources = gulp.src(['build.js'], {read: false, cwd: './dist'});
