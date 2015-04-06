@@ -6,7 +6,10 @@ export var mainConfigModule = angular.module('mainConfigModule', [
 ]).config([
   '$urlRouterProvider',
   '$locationProvider',
-  function($urlRouterProvider, $locationProvider) {
+  '$mdThemingProvider',
+  function($urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $locationProvider.html5Mode(true);
+    $mdThemingProvider.theme('default')
+      .primaryPalette('orange');
   }
 ])
