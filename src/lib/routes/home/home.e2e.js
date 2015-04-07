@@ -1,4 +1,4 @@
-describe('home index', function() {
+describe('home', function() {
   it('has heading', function() {
     browser.get('/');
     expect(element(by.css('h2')).getText()).toEqual('reenan');
