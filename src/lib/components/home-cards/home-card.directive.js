@@ -14,6 +14,7 @@ export var homeCardComponentModule = angular.module('homeCardComponentModule', [
         controllerAs: 'card',
         bindToController: true,
         scope: {
+          img: '=',
           header: '=',
           paragraph: '='
         }

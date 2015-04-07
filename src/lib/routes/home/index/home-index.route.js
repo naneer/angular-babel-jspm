@@ -25,25 +25,14 @@ export var homeIndexRouteModule = angular.module('homeIndexRouteModule', [
         content: function() {
           return { 
               card_0: {
-                header: 'AngularJS',
-                paragraph: 'The frontend of this site is created using  \
-                            AngularJS and Angular-Material. \
-                            It is based on the styleguide by GoCardless, \
-                            please go check them out as the have a real nice structure that \
-                            is easy to follow!'
-              },
-              card_1: {
-                header: 'JSPM',
-                paragraph: 'The package management and the dynamic modular loader used here is \
-                            called JSPM. '
-              },
-              card_2: {
-                header: 'Continous Integration',
-                paragraph: 'Continous Integration'
-              },
-              card_3: {
-                header: 'Testing',
-                paragraph: 'e2e using protractor, unit using karma'
+                img: '',
+                header: 'Hello Planet!',
+                paragraph: 'My name is Reenan. I\'m an aspiring developer. \
+                            In the past, I\'ve built and worked on a number of apps and scripts \
+                            for intranet applications in .NET, js, and python as a Desktop Support \
+                            Specialist, typing away on my pc by myself, but I would like to focus \
+                            my efforts building public facing applications in a collaborative environment. \
+                            '
               }
           };
         }
