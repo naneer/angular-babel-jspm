@@ -10,6 +10,6 @@ export var mainConfigModule = angular.module('mainConfigModule', [
   function($urlRouterProvider, $locationProvider, $mdThemingProvider) {
     $locationProvider.html5Mode(true);
     $mdThemingProvider.theme('default')
-      .primaryPalette('orange');
+      .primaryPalette('deep-orange');
   }
 ])

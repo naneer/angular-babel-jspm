@@ -26,7 +26,14 @@ var server = connect()
       next();
     }
   })
-  .use(serveStatic(options.root));
+  .use(serveStatic(options.root))
+  .use(function serveIndex(req, res, next) {
+    if (req.method !== 'GET' || !req.headers.accept.match('text/html')) {
+      return next();
+    }
+    send(req, '/' + options.index, { root: options.root })
+      .pipe(res);
+  });
 
 
 http.createServer(server)

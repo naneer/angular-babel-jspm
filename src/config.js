@@ -21,8 +21,10 @@ System.config({
     "angular-material": "github:angular/bower-material@0.8.3",
     "angular-mocks": "github:angular/bower-angular-mocks@1.3.15",
     "angular-ui-router": "github:angular-ui/ui-router@0.2.13",
+    "angularfire": "github:firebase/angularfire@1.0.0",
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
+    "firebase": "github:firebase/firebase-bower@2.2.3",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.13": {
       "angular": "github:angular/bower-angular@1.3.15"

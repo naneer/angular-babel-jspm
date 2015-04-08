@@ -1,15 +1,15 @@
 import angular from 'angular';
 
-class homeIndexController {
+class homeIndexRouteController {
   constructor(content) {
     this.content = content;
     console.log('controller hit', this)
   }
 }
 
-homeIndexController.$inject = ['content'];
+homeIndexRouteController.$inject = ['content'];
 
-export var homeIndexControllerModule = angular.module('homeIndexControllerModule', [
+export var homeIndexRouteControllerModule = angular.module('homeIndexRouteControllerModule', [
   
-  ]).controller('homeIndexController', homeIndexController)
+  ]).controller('homeIndexRouteController', homeIndexRouteController)
 ;
