@@ -19,7 +19,7 @@ var options = {
 var defaultSettings = [
   {
     "source": "**",
-    "destination": "index.html"
+    "destination": "/index.html"
   }
 ]
 
