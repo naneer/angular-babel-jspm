@@ -6,7 +6,8 @@
   "scripts": {
     "pretest": "bash ./scripts/pretest",
     "test": "bash ./scripts/test",
-    "start": "bash ./scripts/start"
+    "start": "bash ./scripts/start",
+    "firebase": "node ./scripts/lib/firebase.js -f ./firebase.json"
   },
   "repository": {
     "type": "git",
