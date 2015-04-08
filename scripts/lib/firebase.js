@@ -1,4 +1,10 @@
 #!/usr/bin/env node
+/** 
+    Adds rewrite rules to firebase.json for HTML5Mode(true) mode in Firebase Hosting.
+    When accessing urls directly, example /login, you would get a 404 since the file
+    doesn't actually exist. A rewrite is a server-side solution to move requests back
+    to index.html for angular to handle.
+**/
 
 'use strict';
 
@@ -32,7 +38,7 @@ function readFile(settingsFile, callback){
 }
 
 function addRewrites(settings){
-  settings.rewrite = defaultSettings;
+  settings.rewrites = defaultSettings;
   return settings;
 }
 function writeFile(settingsFile, settings, callback){
