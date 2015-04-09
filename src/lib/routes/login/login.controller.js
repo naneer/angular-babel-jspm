@@ -6,7 +6,7 @@ const AUTH = new WeakMap();
 class loginRouteController {
   constructor(currentUser, Auth){
     //if(currentUser !== null) { console.log('user already logged in')};
-    this.username = '';
+    this.email = '';
     this.password = '';
     console.log('constructor auth', Auth);
     AUTH.set(this, Auth)
@@ -14,7 +14,7 @@ class loginRouteController {
   
   login() {
     AUTH.get(this).$authWithPassword({
-      email: this.username,
+      email: this.email,
       password: this.password
     }).then(function(authData){
       console.log('user logged in', authData);
