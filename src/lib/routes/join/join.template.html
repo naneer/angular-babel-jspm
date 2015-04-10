@@ -25,7 +25,7 @@
         
       <md-input-container md-is-error="ctrl.form.password.$invalid && (ctrl.form.password.$dirty || ctrl.form.$submitted)">
         <label>Password</label>
-        <input name="password" type="password" ng-model="ctrl.password" ng-minlength="8" required input-match="ctrl.confirmpassword"/>
+        <input name="password" type="password" ng-model="ctrl.password" ng-minlength="8" required />
         <div ng-messages="ctrl.form.password.$error" ng-if="ctrl.form.password.$dirty || ctrl.form.$submitted">
           <div ng-message="required">
             Password is required
@@ -33,26 +33,27 @@
           <div ng-message="minlength">
             Must be more than 8 characters
           </div>
-          <div ng-message="inputMatch">
-            Doesn't match the confirmation
-          </div>
         </div>
       </md-input-container>
      
       <md-input-container md-is-error="ctrl.form.confirmpassword.$invalid && 
                                        (ctrl.form.confirmpassword.$dirty || ctrl.form.$submitted)">
         <label>Confirm Password</label>
-        <input name="confirmpassword" type="password" ng-model="ctrl.confirmpassword" 
-               required/>
+        <input name="confirmpassword" type="password" ng-model="ctrl.confirmpassword" ng-minlength="8" input-match="ctrl.password" required/>
         <div ng-messages="ctrl.form.confirmpassword.$error" ng-if="ctrl.form.confirmpassword.$dirty || ctrl.form.$submitted">
           <div ng-message="required">
             Please confirm password
           </div>
+          <div ng-message="minlength"></div>
+          <div ng-message="inputMatch">
+             Confirmation does not match
+          </div>
         </div>
       </md-input-container>
-      <md-button class="md-raised md-primary" aria-label="join">
+      <md-button class="md-raised md-primary" ng-disabled="ctrl.form.$invalid" ng-hide="ctrl.loading" aria-label="join">
         join
       </md-button>
+      <md-progress-circular md-mode="indeterminate" ng-show="ctrl.loading"></md-progress-circular>
       </div>
     </form>
   </div>
