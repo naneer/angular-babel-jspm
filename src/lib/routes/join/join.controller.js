@@ -6,13 +6,11 @@ import {authModule} from 'lib/services/auth/auth';
 
 const AUTH = new WeakMap();
 const STATE = new WeakMap();
-const Q = new WeakMap();
 
 class joinRouteController{
-  constructor(Auth, $state, $q){
+  constructor(Auth, $state){
     AUTH.set(this, Auth);
     STATE.set(this, $state);
-    Q.set(this, $q);
     this.loading = false;
   }
   
@@ -20,7 +18,8 @@ class joinRouteController{
     var ctrl = this;
     var email = ctrl.email,
         password = ctrl.password,
-        auth = AUTH.get(ctrl);
+        auth = AUTH.get(ctrl),
+        state = STATE.get(ctrl);
     
     if (!ctrl.form.$valid) return;
     
@@ -37,6 +36,7 @@ class joinRouteController{
         });
     }).then(function(authData){
         console.log("User is logged in", authData);
+        state.go('login');
     }).catch(function(error){
         console.log("Error Occurred", error);
     }).then(function(){
@@ -45,7 +45,7 @@ class joinRouteController{
   }
 }
 
-joinRouteController.$inject = ['Auth', '$state', '$q'];
+joinRouteController.$inject = ['Auth', '$state'];
 
 export var joinRouteControllerModule = angular.module('joinRouteControllerModule', [
   'ui.router',

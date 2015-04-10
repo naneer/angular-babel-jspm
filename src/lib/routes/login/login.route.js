@@ -22,7 +22,7 @@ export var loginRouteModule = angular.module('loginRouteModule', [
         }
       },
       resolve: {
-        currentUser: [
+        authData: [
           'Auth',
           function(Auth){
             console.log('login auth', Auth);

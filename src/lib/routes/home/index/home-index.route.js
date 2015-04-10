@@ -29,12 +29,7 @@ export var homeIndexRouteModule = angular.module('homeIndexRouteModule', [
               card_0: {
                 img: '',
                 header: 'Hello Planet!',
-                paragraph: 'My name is Reenan. I\'m an aspiring developer. \
-                            In the past, I\'ve built and worked on a number of apps and scripts \
-                            for intranet applications in .NET, js, and python as a Desktop Support \
-                            Specialist, typing away on my pc by myself, but I would like to focus \
-                            my efforts building public facing applications in a collaborative environment. \
-                            '
+                paragraph: 'Web Development'
               }
           };
         }
