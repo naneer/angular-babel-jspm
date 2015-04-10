@@ -2,10 +2,12 @@ import angular from 'angular';
 import 'angular-ui-router';
 
 import {loginRouteModule} from 'lib/routes/login/login.route';
+import {joinRouteModule} from 'lib/routes/join/join.route';
 
 export var mainRunModule = angular.module('mainRunModule', [
   'ui.router',
-  loginRouteModule.name
+  loginRouteModule.name,
+  joinRouteModule.name
 ]).run([
   '$rootScope',
   '$state',

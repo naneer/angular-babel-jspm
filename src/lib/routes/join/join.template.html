@@ -7,20 +7,53 @@
 <md-content class="md-padding">
   <div layout="column" layout-align="center center">
     <h2 class="md-display-4">Escoffier</h2>
-    <md-input-container>
-      <label>Email</label>
-      <input type="email" ng-model="ctrl.email" />
-    </md-input-container>
-    <md-input-container>
-      <label>Password</label>
-      <input type="password" ng-model="ctrl.password" />
-    </md-input-container>
-    <md-input-container>
-      <label>Confirm Password</label>
-      <input type="password" ng-model="ctrl.confirmpassword" />
-    </md-input-container>
-    <md-button ng-click="ctrl.login()" class="md-raised md-primary" aria-label="login">
-      join
-    </md-button>
+    <form name="ctrl.form" ng-submit="ctrl.join()" novalidate>
+      <div layout="column" layout-align="center center">
+        
+      <md-input-container md-is-error="ctrl.form.email.$invalid && (ctrl.form.email.$dirty || ctrl.form.$submitted)">
+        <label>Email</label>
+        <input name="email" type="email" ng-model="ctrl.email" required/>
+        <div ng-messages="ctrl.form.email.$error" ng-if="ctrl.form.email.$dirty || ctrl.form.$submitted">
+          <div ng-message="required">
+            Email is required
+          </div>
+          <div ng-message="email">
+            Please enter a valid email
+          </div>
+        </div>
+      </md-input-container>
+        
+      <md-input-container md-is-error="ctrl.form.password.$invalid && (ctrl.form.password.$dirty || ctrl.form.$submitted)">
+        <label>Password</label>
+        <input name="password" type="password" ng-model="ctrl.password" ng-minlength="8" required input-match="ctrl.confirmpassword"/>
+        <div ng-messages="ctrl.form.password.$error" ng-if="ctrl.form.password.$dirty || ctrl.form.$submitted">
+          <div ng-message="required">
+            Password is required
+          </div>
+          <div ng-message="minlength">
+            Must be more than 8 characters
+          </div>
+          <div ng-message="inputMatch">
+            Doesn't match the confirmation
+          </div>
+        </div>
+      </md-input-container>
+     
+      <md-input-container md-is-error="ctrl.form.confirmpassword.$invalid && 
+                                       (ctrl.form.confirmpassword.$dirty || ctrl.form.$submitted)">
+        <label>Confirm Password</label>
+        <input name="confirmpassword" type="password" ng-model="ctrl.confirmpassword" 
+               required/>
+        <div ng-messages="ctrl.form.confirmpassword.$error" ng-if="ctrl.form.confirmpassword.$dirty || ctrl.form.$submitted">
+          <div ng-message="required">
+            Please confirm password
+          </div>
+        </div>
+      </md-input-container>
+      <md-button class="md-raised md-primary" aria-label="join">
+        join
+      </md-button>
+      </div>
+    </form>
   </div>
 </md-content>
