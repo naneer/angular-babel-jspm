@@ -37,6 +37,7 @@
       "angular-ui-router": "github:angular-ui/ui-router@^0.2.13",
       "angularfire": "github:firebase/angularfire@^1.0.0",
       "firebase": "github:firebase/firebase-bower@^2.2.3",
+      "font-awesome": "npm:font-awesome@^4.3.0",
       "text": "github:systemjs/plugin-text@^0.0.2"
     },
     "devDependencies": {

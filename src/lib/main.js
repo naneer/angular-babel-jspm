@@ -3,6 +3,7 @@ import 'angular-material';
 import 'angular-animate';
 import 'angular-aria';
 import 'angular-messages';
+import 'font-awesome';
 
 import {homeRouteModule} from './routes/home/home.route';
 import {mainConfigModule} from './config/main.config';
