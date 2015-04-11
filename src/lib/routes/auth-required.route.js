@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import 'font-awesome';
 
 import 'firebase';
 import firebase from 'angularfire';
