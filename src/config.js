@@ -25,6 +25,7 @@ System.config({
     "angularfire": "github:firebase/angularfire@1.0.0",
     "babel": "npm:babel@4.7.16",
     "babel-runtime": "npm:babel-runtime@4.7.16",
+    "css": "github:systemjs/plugin-css@0.1.9",
     "firebase": "github:firebase/firebase-bower@2.2.3",
     "font-awesome": "npm:font-awesome@4.3.0",
     "text": "github:systemjs/plugin-text@0.0.2",
