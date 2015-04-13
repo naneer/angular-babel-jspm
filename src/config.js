@@ -27,7 +27,6 @@ System.config({
     "babel-runtime": "npm:babel-runtime@4.7.16",
     "css": "github:systemjs/plugin-css@0.1.9",
     "firebase": "github:firebase/firebase-bower@2.2.3",
-    "font-awesome": "npm:font-awesome@4.3.0",
     "text": "github:systemjs/plugin-text@0.0.2",
     "github:angular-ui/ui-router@0.2.13": {
       "angular": "github:angular/bower-angular@1.3.15"
@@ -131,9 +130,6 @@ System.config({
     },
     "npm:events-browserify@0.0.1": {
       "process": "github:jspm/nodelibs-process@0.1.1"
-    },
-    "npm:font-awesome@4.3.0": {
-      "css": "github:systemjs/plugin-css@0.1.9"
     },
     "npm:https-browserify@0.0.0": {
       "http": "github:jspm/nodelibs-http@1.7.1"

@@ -6,5 +6,5 @@
 # stops script on errors
 set -e errexit
 
-jspm bundle lib/bootstrap dist/build.js
+jspm bundle lib/bootstrap dist/build.js --minify
 gulp index
