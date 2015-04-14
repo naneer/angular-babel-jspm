@@ -6,12 +6,7 @@ class recipesCreateServingsController {
   }
   
   addServings(value){
-    this.servings = this.servings + value;
-  }
-  
-  removeServings(value){
-    this.servings = this.servings - value;
-    if (this.servings <= 0) this.servings = 0;
+    this.servings = value;
   }
  
   setServingsManual(){

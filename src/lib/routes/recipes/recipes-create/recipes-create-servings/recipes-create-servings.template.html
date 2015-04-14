@@ -1,24 +1,19 @@
+<md-content class="md-padding">
 <div layout="column" layout-align="center center" layout-fill>
   <h3>Makes <span ng-if="ctrl.servings > 0">{{ ctrl.servings }}</span><span ng-if="ctrl.servings <= 0">_</span> servings</h3>
 </div>
-<div layout="column" layout-align="center center">
-  <md-subheader>Use Quick Buttons</md-subheader>
-</div>
-<div layout="row" layout-align="space-around start" ng-hide="ctrl.removeMenu">
-  <md-button class="md-fab md-primary" aria-label="Add 1 Serving" ng-click="ctrl.addServings(1)">+1</md-button>
-  <md-button class="md-fab md-primary" aria-label="Add 2 Servings" ng-click="ctrl.addServings(2)">+2</md-button>
-  <md-button class="md-fab md-primary" aria-label="Add 4 Servings" ng-click="ctrl.addServings(4)">+4</md-button>
-</div>
-<div layout="row" layout-align="space-around start" ng-show="ctrl.removeMenu">
-  <md-button class="md-fab md-warn" aria-label="Remove 1 Serving" ng-click="ctrl.removeServings(1)">-1</md-button>
-  <md-button class="md-fab md-warn" aria-label="Remove 2 Servings" ng-click="ctrl.removeServings(2)">-2</md-button>
-  <md-button class="md-fab md-warn" aria-label="Remove 4 Servings" ng-click="ctrl.removeServings(4)">-4</md-button>
-</div>
-<div layout="row" layout-align="start start">
-  <md-switch ng-model="ctrl.removeMenu">Remove Servings</md-switch>
-</div>
 <md-divider></md-divider>
-
+<div layout="column" layout-align="center center">
+  <md-subheader>Use Quick Presets</md-subheader>
+</div>
+<div layout="row" layout-align="space-around start">
+  <md-button class="md-fab md-primary" aria-label="Add 1 Serving" ng-click="ctrl.addServings(1)">1</md-button>
+  <md-button class="md-fab md-primary" aria-label="Add 2 Servings" ng-click="ctrl.addServings(2)">2</md-button>
+  <md-button class="md-fab md-primary" aria-label="Add 4 Servings" ng-click="ctrl.addServings(4)">4</md-button>
+</div>
+</md-content>
+<md-divider></md-divider>
+<md-content class="md-padding">
 <div layout="column" layout-align="center center">
   <md-subheader>or Manually Enter</md-subheader>
   <form name="ctrl.manualForm" ng-submit="ctrl.setServingsManual()" novalidate>
@@ -39,6 +34,4 @@
     </div>
   </form>
 </div>
-<div layout="row" layout-align="space-around start">
-
-</div>
+</md-content>
