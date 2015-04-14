@@ -51,11 +51,15 @@
           </div>
         </div>
       </md-input-container>
-      <md-button class="md-raised md-primary" ng-disabled="ctrl.form.$invalid" ng-hide="ctrl.loading" aria-label="join">
+      <md-button class="md-raised md-primary" ng-hide="ctrl.loading" aria-label="join">
         join
       </md-button>
       <md-progress-circular md-mode="indeterminate" ng-show="ctrl.loading"></md-progress-circular>
+        <p>{{ctrl.error}}</p>
       </div>
     </form>
+    <md-button class="" ui-sref="login" aria-label="login">
+      Already a member? Click here
+    </md-button>
   </div>
 </md-content>

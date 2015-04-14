@@ -1,0 +1,30 @@
+<div layout="column" layout-align="center center" layout-fill>
+  <h3>Makes <span ng-if="ctrl.servings > 0">{{ ctrl.servings }}</span><span ng-if="ctrl.servings <= 0">_</span> servings</h3>
+</div>
+<div layout="column" layout-align="center center">
+  <md-subheader>Quick Buttons</md-subheader>
+</div>
+<div layout="row" layout-align="space-around start" ng-hide="ctrl.removeMenu">
+  <md-button class="md-fab md-primary" aria-label="Add 1 Serving" ng-click="ctrl.addServings(1)">+1</md-button>
+  <md-button class="md-fab md-primary" aria-label="Add 2 Servings" ng-click="ctrl.addServings(2)">+2</md-button>
+  <md-button class="md-fab md-primary" aria-label="Add 4 Servings" ng-click="ctrl.addServings(4)">+4</md-button>
+</div>
+<div layout="row" layout-align="space-around start" ng-show="ctrl.removeMenu">
+  <md-button class="md-fab md-warn" aria-label="Remove 1 Serving" ng-click="ctrl.removeServings(1)">-1</md-button>
+  <md-button class="md-fab md-warn" aria-label="Remove 2 Servings" ng-click="ctrl.removeServings(2)">-2</md-button>
+  <md-button class="md-fab md-warn" aria-label="Remove 4 Servings" ng-click="ctrl.removeServings(4)">-4</md-button>
+</div>
+<div layout="row" layout-align="start start">
+  <md-switch ng-model="ctrl.removeMenu">Remove Servings</md-switch>
+</div>
+<md-divider></md-divider>
+<div layout="column" layout-align="center center">
+  <md-subheader>Manually Enter</md-subheader>
+  <md-input-container>
+    <label>Number of Servings</label>
+    <input ng-model="ctrl.manualServings" type="number" ng-minlength="0" min="0" />
+  </md-input-container>
+</div>
+<div layout="row" layout-align="space-around start">
+  <md-button class="md-primary md-raised" arial-label="Manual Enter Servings" ng-click="ctrl.setServingsManual()">Enter</md-button>
+</div>

@@ -17,7 +17,8 @@ class loginRouteController {
   }
   
   login() {
-    var state = STATE.get(this);
+    var state = STATE.get(this),
+        ctrl = this;
     AUTH.get(this).$authWithPassword({
       email: this.email,
       password: this.password
@@ -25,7 +26,7 @@ class loginRouteController {
       console.log('user logged in', authData);
       state.go('authRequired.home.index');
     }).catch(function(error){
-      console.error('Authentication Failed', error);
+      ctrl.error = "Incorrect username or password";
     });
   }
 }

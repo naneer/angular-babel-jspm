@@ -39,6 +39,7 @@ class joinRouteController{
         state.go('login');
     }).catch(function(error){
         console.log("Error Occurred", error);
+        ctrl.error = error.message;
     }).then(function(){
         ctrl.loading = false;
     });
