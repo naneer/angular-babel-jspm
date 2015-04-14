@@ -2,7 +2,7 @@
   <h3>Makes <span ng-if="ctrl.servings > 0">{{ ctrl.servings }}</span><span ng-if="ctrl.servings <= 0">_</span> servings</h3>
 </div>
 <div layout="column" layout-align="center center">
-  <md-subheader>Quick Buttons</md-subheader>
+  <md-subheader>Use Quick Buttons</md-subheader>
 </div>
 <div layout="row" layout-align="space-around start" ng-hide="ctrl.removeMenu">
   <md-button class="md-fab md-primary" aria-label="Add 1 Serving" ng-click="ctrl.addServings(1)">+1</md-button>
@@ -18,13 +18,27 @@
   <md-switch ng-model="ctrl.removeMenu">Remove Servings</md-switch>
 </div>
 <md-divider></md-divider>
+
 <div layout="column" layout-align="center center">
-  <md-subheader>Manually Enter</md-subheader>
-  <md-input-container>
-    <label>Number of Servings</label>
-    <input ng-model="ctrl.manualServings" type="number" ng-minlength="0" min="0" />
-  </md-input-container>
+  <md-subheader>or Manually Enter</md-subheader>
+  <form name="ctrl.manualForm" ng-submit="ctrl.setServingsManual()" novalidate>
+    <div layout="center" layout-align="">
+    <md-input-container>
+      <label>Number of Servings</label>
+      <input ng-model="ctrl.manualServings" name="manualServings" type="number" required ng-minlength="0" min="0" />
+      <div ng-messages="ctrl.manualForm.manualServings.$error" ng-if="ctrl.manualForm.$submitted || ctrl.manualForm.manualServings.$dirty">
+        <div ng-message="number">
+          Not A Number
+        </div>
+        <div ng-message="min">
+          Can't enter negative numbers
+        </div>
+      </div>
+    </md-input-container>
+    <md-button class="md-primary" arial-label="Manual Enter Servings">enter</md-button>
+    </div>
+  </form>
 </div>
 <div layout="row" layout-align="space-around start">
-  <md-button class="md-primary md-raised" arial-label="Manual Enter Servings" ng-click="ctrl.setServingsManual()">Enter</md-button>
+
 </div>

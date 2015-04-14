@@ -14,7 +14,8 @@ class recipesCreateServingsController {
     if (this.servings <= 0) this.servings = 0;
   }
  
-  setServingsManual(value){
+  setServingsManual(){
+    if (!this.manualForm.$valid) return;
     this.servings = this.manualServings;
     if (this.servings <= 0) this.servings = 0;
   }

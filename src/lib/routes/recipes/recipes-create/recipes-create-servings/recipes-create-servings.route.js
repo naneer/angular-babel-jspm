@@ -1,5 +1,6 @@
 import angular from 'angular';
 import 'angular-ui-router';
+import 'angular-messages';
 
 import {authRequiredRouteModule} from '../../../auth-required.route';
 import {recipesCreateServingsControllerModule} from './recipes-create-servings.controller';
@@ -7,6 +8,7 @@ import template from './recipes-create-servings.template.html!text';
 
 export var recipesCreateServingsRouteModule = angular.module('recipesCreateServingsRouteModule', [
   'ui.router',
+  'ngMessages',
   authRequiredRouteModule.name,
   recipesCreateServingsControllerModule.name
 ]).config([
