@@ -1,8 +1,12 @@
 import angular from 'angular';
 
-class recipesCreateServingsController {
-  constructor(){
-    this.servings = 0;
+import {recipeModule} from 'lib/services/recipe/recipe';
+
+const RECIPE = new WeakMap();
+class recipesCreateServingsRouteController {
+  constructor(servings, Recipe){
+    this.servings = servings;
+    RECIPE.set(this, Recipe);
   }
   
   addServings(value){
@@ -14,8 +18,14 @@ class recipesCreateServingsController {
     this.servings = this.manualServings;
     if (this.servings <= 0) this.servings = 0;
   }
+  
+  applyToRecipe(){
+    RECIPE.get(this).servings = this.servings;
+  }
 }
 
-export var recipesCreateServingsControllerModule = angular.module('recipesCreateServingsControllerModule', [
-  
-]).controller('recipesCreateServingsController', recipesCreateServingsController);
+recipesCreateServingsRouteController.$inject = ['servings', 'Recipe'];
+
+export var recipesCreateServingsRouteControllerModule = angular.module('recipesCreateServingsRouteControllerModule', [
+  recipeModule.name
+]).controller('recipesCreateServingsRouteController', recipesCreateServingsRouteController);

@@ -3,14 +3,16 @@ import 'angular-ui-router';
 import 'angular-messages';
 
 import {authRequiredRouteModule} from '../../../auth-required.route';
-import {recipesCreateServingsControllerModule} from './recipes-create-servings.controller';
+import {recipesCreateServingsRouteControllerModule} from './recipes-create-servings.controller';
 import template from './recipes-create-servings.template.html!text';
+import {recipeModule} from 'lib/services/recipe/recipe';
 
 export var recipesCreateServingsRouteModule = angular.module('recipesCreateServingsRouteModule', [
   'ui.router',
   'ngMessages',
   authRequiredRouteModule.name,
-  recipesCreateServingsControllerModule.name
+  recipesCreateServingsRouteControllerModule.name,
+  recipeModule.name
 ]).config([
   '$stateProvider',
   function recipesCreateServingsRoute($stateProvider){
@@ -20,8 +22,16 @@ export var recipesCreateServingsRouteModule = angular.module('recipesCreateServi
         '': {
           template: template,
           controllerAs: 'ctrl',
-          controller: 'recipesCreateServingsController'
+          controller: 'recipesCreateServingsRouteController'
         }
+      },
+      resolve: {
+         servings: [
+           'Recipe',
+           function(Recipe){
+             return Recipe.servings;
+           }
+         ]
       }
     });
   }

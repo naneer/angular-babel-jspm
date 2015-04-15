@@ -1,6 +1,5 @@
-
-<div layout="column" layout-align="center center" layout-fill>
-  <h3>Makes <span ng-if="ctrl.servings > 0">{{ ctrl.servings }}</span><span ng-if="ctrl.servings <= 0">_</span> servings</h3>
+<div layout="row" layout-align="center center" layout-fill>
+    <h3>Makes <span ng-if="ctrl.servings > 0">{{ ctrl.servings }}</span><span ng-if="ctrl.servings <= 0">_</span> servings</h3>
 </div>
 
 <md-content class="md-padding">
@@ -40,7 +39,9 @@
 </md-content>
 
 <md-content class="md-padding">
-  <div layout="row" layout-align="center end">
-    <md-button class="md-raised md-primary" aria-label="next">Next</md-button>
+  <md-divider></md-divider>
+  <div layout="column" layout-align="center center">
+    <md-subheader>Continue</md-subheader>
+    <md-button class="md-icon-button md-primary" ng-click="ctrl.applyToRecipe()" aria-label="next"><md-icon class="md-font-icon fa fa-chevron-right fa-2x"></md-icon></md-button>
   </div>
 </md-content>
