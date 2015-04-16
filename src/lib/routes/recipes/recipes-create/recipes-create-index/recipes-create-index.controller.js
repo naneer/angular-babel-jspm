@@ -1,12 +1,12 @@
 import angular from 'angular';
 
 class recipesCreateIndexRouteController {
-  constructor(){
-    
+  constructor(servings){
+    this.servings = servings;
   }
 }
 
-recipesCreateIndexRouteController.$inject = [];
+recipesCreateIndexRouteController.$inject = ['servings'];
 
 export var recipesCreateIndexRouteControllerModule = angular.module('recipesCreateIndexRouteControllerModule', [
   

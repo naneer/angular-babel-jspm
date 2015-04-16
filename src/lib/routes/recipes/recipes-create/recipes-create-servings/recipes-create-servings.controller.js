@@ -1,16 +1,21 @@
 import angular from 'angular';
+import 'angular-ui-router';
 
 import {recipeModule} from 'lib/services/recipe/recipe';
 
 const RECIPE = new WeakMap();
+const STATE = new WeakMap();
+
 class recipesCreateServingsRouteController {
-  constructor(servings, Recipe){
+  constructor(servings, Recipe, $state){
     this.servings = servings;
     RECIPE.set(this, Recipe);
+    STATE.set(this, $state);
   }
   
-  addServings(value){
+  setServingsAndApply(value){
     this.servings = value;
+    this.applyToRecipe();
   }
  
   setServingsManual(){
@@ -21,11 +26,13 @@ class recipesCreateServingsRouteController {
   
   applyToRecipe(){
     RECIPE.get(this).servings = this.servings;
+    STATE.get(this).go('^.index');
   }
 }
 
-recipesCreateServingsRouteController.$inject = ['servings', 'Recipe'];
+recipesCreateServingsRouteController.$inject = ['servings', 'Recipe', '$state'];
 
 export var recipesCreateServingsRouteControllerModule = angular.module('recipesCreateServingsRouteControllerModule', [
+  'ui.router',
   recipeModule.name
 ]).controller('recipesCreateServingsRouteController', recipesCreateServingsRouteController);

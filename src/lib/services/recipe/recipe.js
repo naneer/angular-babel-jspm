@@ -3,6 +3,7 @@ import angular from 'angular';
 class Recipe {
   constructor() {
     this._servings = 0;
+    this._ingredients = {};
   }
   
   get servings(){

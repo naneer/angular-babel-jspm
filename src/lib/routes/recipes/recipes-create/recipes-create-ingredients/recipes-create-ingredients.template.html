@@ -1,0 +1,54 @@
+<div layout="column" layout-align="center center">
+  <h3>Ingredient</h3>
+  <h3>
+      <span ng-hide="ctrl.wholeNumber <= 0">{{ ctrl.wholeNumber }} </span>
+      <span ng-hide="ctrl.partNumber.value <= 0">{{ ctrl.partNumber.name }}</span>
+      <span ng-hide="ctrl.measurementUnit === null">{{ ctrl.measurementUnit.shortname }}</span>
+  </h3>
+</div>
+<md-content class="md-padding">
+
+<div layout="column" layout-align="center center">
+  <md-subheader>First Enter Whole Number</md-subheader>
+</div>
+<div layout="row" layout-wrap>
+    <div flex="20" ng-repeat="wholeNum in ctrl.numbers" >
+      <div layout="column" layout-align="center center">
+        <md-button class="md-fab md-primary" ng-click="ctrl.setWholeNumValue(wholeNum)">{{ wholeNum }}</md-button> 
+      </div>
+    </div>
+</div>
+
+
+<div layout="column" layout-align="center center">
+  <md-subheader>Then a Enter Part Number if exists</md-subheader>
+</div>
+<div layout="row" layout-wrap>
+    <div flex="20" ng-repeat="partNum in ctrl.fractions" >
+      <div layout="column" layout-align="center center">
+        <md-button class="md-fab md-primary" ng-click="ctrl.setPartNumValue(partNum)">{{ partNum.name }}</md-button> 
+      </div>
+    </div>
+</div>
+
+
+<div layout="column" layout-align="center center">
+  <md-subheader>Then Unit of Measurement</md-subheader>
+</div>
+<div layout="row" layout-wrap>
+    <div flex="20" ng-repeat="measurement in ctrl.measurements" >
+      <div layout="column" layout-align="center center">
+        <md-button class="md-fab md-primary" ng-click="ctrl.setMeasurementUnit(measurement)">{{ measurement.shortname }}</md-button> 
+      </div>
+    </div>
+</div>
+  
+  <div layout="column" layout-align="center center">
+    <md-subheader>Continue</md-subheader>
+    <md-button class="md-icon-button md-primary" ng-click="ctrl.applyToRecipe()" aria-label="next">
+      <md-icon class="md-font-icon fa fa-chevron-right fa-2x"></md-icon>
+    </md-button>
+  </div>
+  
+  
+</md-content>
