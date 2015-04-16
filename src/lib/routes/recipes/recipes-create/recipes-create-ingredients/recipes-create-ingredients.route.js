@@ -5,11 +5,13 @@ import {authRequiredRouteModule} from '../../../auth-required.route';
 import {recipesCreateIngredientsRouteControllerModule} from './recipes-create-ingredients.controller';
 import template from './recipes-create-ingredients.template.html!text';
 
+import {fractionFilterModule} from 'lib/services/filters/fraction/fraction';
 import {recipeModule} from 'lib/services/recipe/recipe';
 
 export var recipesCreateIngredientsRouteModule = angular.module('recipesCreateIngredientsRouteModule', [
   recipeModule.name,
-  recipesCreateIngredientsRouteControllerModule.name
+  recipesCreateIngredientsRouteControllerModule.name,
+  fractionFilterModule.name
 ]).config([
   '$stateProvider',
   function recipesCreateIngredientsRoute($stateProvider){
