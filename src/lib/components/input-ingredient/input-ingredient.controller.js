@@ -1,9 +1,8 @@
 import angular from 'angular';
 
-class recipesCreateIndexRouteController {
-  constructor(servings){
-    this.servings = servings;
-    this.units = [
+class inputIngredientController {
+  constructor() {
+     this.units = [
       {'name': 'teaspoon', 'shortname': 'tsp'},
       {'name': 'tablespoon', 'shortname': 'tbsp'},
       {'name': 'fluid ounce', 'shortname': 'fl oz'},
@@ -26,9 +25,9 @@ class recipesCreateIndexRouteController {
   }
 }
 
-recipesCreateIndexRouteController.$inject = ['servings'];
+inputIngredientController.$inject = [];
 
-export var recipesCreateIndexRouteControllerModule = angular.module('recipesCreateIndexRouteControllerModule', [
+export var inputIngredientControllerModule = angular.module('inputIngredientControllerModule', [
   
-]).controller('recipesCreateIndexRouteController', recipesCreateIndexRouteController)
+]).controller('inputIngredientController', inputIngredientController)
 ;

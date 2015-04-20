@@ -1,4 +1,28 @@
-<div layout="column" layout-align="center center">
+<!-- <div layout="column" layout-align="center center">
   <md-button ui-sref="^.servings" class="md-primary">{{ ctrl.servings }} Servings</md-button>
   <md-button ui-sref="^.ingredients" class="md-primary">Add Ingredient</md-button>
-</div>
+</div> -->
+
+
+<form name="recipe.form" novalidate  ng-submit="recipe.submit()">
+  <div layout="column" layout-align="center center">
+    <h1 class="md-headline">New Recipe</h1>
+  </div>
+  <md-divider></md-divider>
+  <div layout="column" >
+    <md-input-container>
+      <label class="md-title">Name</label>
+      <input type="text" />
+    </md-input-container>
+    <div layout="row" >
+      <md-input-container>
+        <label>Servings</label>
+        <input type="number" />
+      </md-input-container>
+    </div>
+    <md-divider></md-divider>
+    <input-ingredient></input-ingredient>
+    <input-ingredient></input-ingredient>
+    <input-ingredient></input-ingredient>
+  </div>
+</form>

@@ -1,44 +1,48 @@
 <div layout="column" layout-align="center center">
   <h3>Ingredient</h3>
   <h3>
-      <span ng-show="ctrl.wholeNumber > 0">{{ ctrl.wholeNumber }} </span>
-      <span ng-hide="ctrl.wholeNumber > 0">Test </span>
+<!--       <span ng-show="ctrl.wholeNumber > 0">{{ ctrl.wholeNumber }} </span>
+      <span ng-hide="ctrl.wholeNumber > 0">Test </span>-->
       <span ng-show="ctrl.partNumber > 0">{{ ctrl.partNumber | number: 2 | fraction }}</span>
-      <span ng-hide="ctrl.measurementUnit === null">{{ ctrl.measurementUnit.shortname }}</span>
+      <span ng-hide="ctrl.unit === null">{{ ctrl.unit.shortname }}</span>
+      <span ng-hide="ctrl.name === null">{{ ctrl.name }}</span>
   </h3>
 </div>
 
-<md-content class="md-padding">
+
+<md-divider></md-divider>
+<div layout="row" layout-align="center center">
+  <md-select ng-model="ctrl.selectNumber" ng-model-options="{ getterSetter: true }" placeholder="add a fraction"  
+             style="margin-top: 0;">
+    <md-option ng-value="0">-</md-option>
+    <md-option ng-value="decimal" ng-repeat="decimal in ctrl.decimals">{{ decimal | number: 4 | fraction }}</md-option> 
+  </md-select>
+  <md-select ng-model="ctrl.unit" placeholder="unit" style="margin-top:0;">
+    <md-option ng-value=""></md-option>
+    <md-option ng-value="measurement" ng-repeat="measurement in ctrl.measurements">{{ measurement.shortname }}</md-option>
+  </md-select>
+  <md-input-container>
+    <label>Name</label>
+    <input type="text" name="name" ng-model="ctrl.name" required />
+  </md-input-container>
+</div>
+
+  
+  <!-- <md-content class="md-padding">
 <div layout="column" layout-align="center center">
   <md-subheader>Quantity of Ingredient</md-subheader>  
 </div>
-<div layout="column" layout-align="center center">
+<div layout="row" layout-align="center center">
   <md-input-container>
     <label>Quantity</label>
       <input name="dirtyNumber" ng-model="ctrl.dirtyNumber" type="number" min="0" />
   </md-input-container>
   
-  <md-select ng-model="ctrl.fractionSelect" placeholder="add a fraction" style="margin-top: 0;">
+  <md-select ng-model="ctrl.selectNumber" ng-model-options="{ getterSetter: true }" placeholder="add a fraction" style="margin-top: 0;">
     <md-option ng-value="0">-</md-option>
-    <md-option ng-value="partNum" ng-repeat="partNum in ctrl.fractions">{{ partNum.name }}</md-option> 
+    <md-option ng-value="decimal" ng-repeat="decimal in ctrl.decimals">{{ decimal | number: 4 | fraction }}</md-option> 
   </md-select>
   <p style="font-size:0.67rem; margin-top: 0px;">Add a fraction from a list of commonly used parts</p>
 </div>
-</md-content>
+</md-content> -->
 
-<md-divider></md-divider>
-<div layout="column" layout-align="center center">
-  <md-subheader>Unit of Measurement</md-subheader>
-  <md-select ng-model="ctrl.measurementUnit" placeholder="select unit of measurement">
-    <md-option ng-value="measurement" ng-repeat="measurement in ctrl.measurements">{{ measurement.shortname }}</md-option>
-  </md-select>
-</div>
-
-<div layout="column" layout-align="center center">
-  <md-subheader>Continue</md-subheader>
-  <md-button class="md-icon-button md-primary" ng-click="ctrl.applyToRecipe()" aria-label="next">
-    <md-icon class="md-font-icon fa fa-chevron-right fa-2x"></md-icon>
-  </md-button>
-</div>
-  
-  

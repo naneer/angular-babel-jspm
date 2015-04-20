@@ -3,6 +3,7 @@ import angular from 'angular';
 export var fractionFilterModule = angular.module('fractionFilterModule', [
 ]).filter('fraction', function() {
   return function(input) {
+    if(!input) return;
     var numerator = input ,
         denominator = 1;
     var scaleup = Math.pow(10, input.toString().split('.')[1].length);
@@ -13,6 +14,13 @@ export var fractionFilterModule = angular.module('fractionFilterModule', [
     
     numerator /= g;
     denominator /= g;
+    
+    if (numerator === 33 && denominator === 100) {
+      return '1/3';
+    }
+    if (numerator === 33 && denominator === 50) {
+      return '2/3';
+    }
     
     return numerator + '/' + denominator;
     

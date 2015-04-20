@@ -3,14 +3,8 @@ import angular from 'angular';
 class recipesCreateIngredientsRouteController {
   constructor(){
     this.measurementUnit = {};
-
-    this.fractions = [
-      {'name': '1/4', value: 0.25},
-      {'name': '1/3', value: 0.33},
-      {'name': '1/2', value: 0.5 },
-      {'name': '2/3', value: 0.66},
-      {'name': '3/4', value: 0.75}
-    ];
+    
+    this.decimals = [0.25, 0.33, 0.50, 0.66, 0.75];
     this.measurements = [
       {'name': 'teaspoon', 'shortname': 'tsp'},
       {'name': 'tablespoon', 'shortname': 'tbsp'},
@@ -34,12 +28,42 @@ class recipesCreateIngredientsRouteController {
   }
   
   get wholeNumber() {
-    return Math.floor(this.dirtyNumber);
+    return this._wholeNumber;
+  }
+  
+  set wholeNumber(value) {
+    this._wholeNumber = Math.floor(value);
   }
   
   get partNumber() {
-    return this.dirtyNumber % 1;
+    return this._partNumber;
   }
+  
+  set partNumber(value) {
+    value = value % 1;
+    this._partNumber = value;
+    this._selectNumber = value;
+  }
+  
+  get dirtyNumber() {
+    return this._dirtyNumber;
+  }
+  
+  set dirtyNumber(value) {
+    this.wholeNumber = value;
+    this.partNumber = value;
+    this._dirtyNumber = value;
+  }
+  
+  get selectNumber(){
+    return this._selectNumber;
+  }
+  
+  set selectNumber(value){
+    this._selectNumber = value;
+    this.dirtyNumber = this.wholeNumber + value;
+  }
+ 
 }
 
 recipesCreateIngredientsRouteController.$inject = [];

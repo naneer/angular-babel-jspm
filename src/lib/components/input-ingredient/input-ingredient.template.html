@@ -1,0 +1,16 @@
+<div layout="row">
+  <md-input-container>
+    <label>Ingredient</label>
+    <input type="text" />
+  </md-input-container>
+  <md-input-container>
+    <label>Quantity</label>
+    <input type="number" />
+  </md-input-container>
+  <md-select ng-model="ctrl.unit" placeholder="Unit">
+    <md-option ng-value=""></md-option>
+    <md-option ng-value="measurement" ng-repeat="measurement in ctrl.units">
+      {{ measurement.shortname }}
+    </md-option>
+  </md-select>
+</div>

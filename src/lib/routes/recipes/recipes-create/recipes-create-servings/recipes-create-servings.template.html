@@ -21,7 +21,7 @@
   <form name="ctrl.manualForm" ng-submit="ctrl.setServingsManual()" novalidate>
     <div layout="center" layout-align="">
     <md-input-container>
-      <label>Number of Servings</label>
+      <label># Servings</label>
       <input ng-model="ctrl.manualServings" name="manualServings" type="number" required ng-minlength="0" min="0" />
       <div ng-messages="ctrl.manualForm.manualServings.$error" ng-if="ctrl.manualForm.$submitted || ctrl.manualForm.manualServings.$dirty">
         <div ng-message="number">
@@ -38,10 +38,4 @@
 </div>
 </md-content>
 
-<md-content class="md-padding">
-  <md-divider></md-divider>
-  <div layout="column" layout-align="center center">
-    <md-subheader>Continue</md-subheader>
-    <md-button class="md-icon-button md-primary" ng-click="ctrl.applyToRecipe()" aria-label="next"><md-icon class="md-font-icon fa fa-chevron-right fa-2x"></md-icon></md-button>
-  </div>
-</md-content>
+
